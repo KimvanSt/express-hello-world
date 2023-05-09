@@ -8,13 +8,13 @@ build-code-job:
     - docker
   image: node:18-buster
   script:
-    - npm i minify
-    - minify server.js
-    - minify app.js
-    - minify public/app.js
-    - minify public/globe.js
-    - minify public/particles.js
-    - minify public/planetaryjs.js
+    - npm i minify -g
+    - minify server.js > server.min.js
+    - minify app.js > app.min.js
+    - minify public/app.js > public/app.min.js
+    - minify public/globe.js > public/globe.min.js
+    - minify public/particles.js > public/particles.min.js
+    - minify public/planetaryjs.js > public/planetaryjs.min.js
 
 deploy-code-job:
   stage: deploy
