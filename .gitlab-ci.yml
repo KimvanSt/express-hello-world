@@ -24,7 +24,7 @@ deploy-code-job:
     - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
     - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
   script:
-    - git checkout CI_DEFAULT_BRANCH
-    - git merge CI_COMMIT_BRANCH
+    - git checkout $CI_DEFAULT_BRANCH
+    - git merge $CI_COMMIT_BRANCH
     - git remote add origin $GITHUB_URL
     - git add . && commit -m 'automatic deployment from gitlab' && git push -u origin/main
