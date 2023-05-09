@@ -27,5 +27,4 @@ deploy-code-job:
     - git fetch origin main
     - git checkout main
     - git merge origin/feature
-    - git remote add origin $GITHUB_URL
-    - git add . && commit -m 'automatic deployment from gitlab' && git push -u origin/main
+    - git push --set-upstream $GITHUB_URL main
